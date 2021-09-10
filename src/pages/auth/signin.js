@@ -34,6 +34,8 @@ const theme = createTheme({
 const useStyles = makeStyles((theme) => ({
   header: {
     textAlign: 'left',
+    fontSize: '1.4rem',
+    fontWeight: 600,
   },
   headerHelper: {
     color: grey[700],
@@ -91,7 +93,7 @@ function SignInScreen() {
           <Grid container spacing={1}>
             <Grid item xs={12}>
               <Typography variant="h4" className={classes.header}>
-                Sign In
+                Sign in to p2p|market
               </Typography>
             </Grid>
             <Grid item xs={12}>
