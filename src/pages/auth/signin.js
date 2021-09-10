@@ -4,6 +4,8 @@ import {
   Typography,
   TextField,
   ThemeProvider,
+  FormControlLabel,
+  Checkbox,
   Button,
   ButtonGroup,
   createTheme,
@@ -53,6 +55,13 @@ const useStyles = makeStyles((theme) => ({
   },
   actionButton: {
     minWidth: '30px',
+  },
+  rememberMe: {
+    fontSize: '0.9rem',
+    fontWeight: 300,
+  },
+  passwordRow: {
+    paddingTop: '0px!important',
   },
 }));
 
@@ -106,14 +115,33 @@ function SignInScreen() {
                     />
                   </Grid>
 
-                  <Grid item xs={12}>
-                    <Button
-                      variant="contained"
-                      color="primary"
-                      className={classes.signInButton}
-                    >
-                      Sign In
-                    </Button>
+                  <Grid item xs={12} className={classes.passwordRow}>
+                    <Grid container spacing={0}>
+                      <Grid item xs={12}>
+                        <Grid container spacing={0}>
+                          <FormControlLabel
+                            control={<Checkbox color="primary" size="small" />}
+                            label={
+                              <Typography
+                                variant="body1"
+                                className={classes.rememberMe}
+                              >
+                                Remember me
+                              </Typography>
+                            }
+                          />
+                        </Grid>
+                      </Grid>
+                      <Grid item xs={12}>
+                        <Button
+                          variant="contained"
+                          color="primary"
+                          className={classes.signInButton}
+                        >
+                          Sign In
+                        </Button>
+                      </Grid>
+                    </Grid>
                   </Grid>
 
                   <Grid item xs={12}>
