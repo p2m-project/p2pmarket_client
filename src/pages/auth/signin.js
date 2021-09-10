@@ -5,6 +5,7 @@ import {
   TextField,
   ThemeProvider,
   Button,
+  ButtonGroup,
   createTheme,
   makeStyles,
 } from '@material-ui/core';
@@ -47,6 +48,12 @@ const useStyles = makeStyles((theme) => ({
     minWidth: '100%',
     padding: theme.spacing(1),
   },
+  root: {
+    padding: theme.spacing(1),
+  },
+  actionButton: {
+    minWidth: '30px',
+  },
 }));
 
 function SignInScreen() {
@@ -60,6 +67,7 @@ function SignInScreen() {
         alignItems="center"
         justifyContent="center"
         style={{ minHeight: '100vh' }}
+        className={classes.root}
       >
         <Grid item xs={12} md={6} lg={3}>
           <Grid container spacing={1}>
@@ -97,6 +105,7 @@ function SignInScreen() {
                       type="password"
                     />
                   </Grid>
+
                   <Grid item xs={12}>
                     <Button
                       variant="contained"
@@ -105,6 +114,24 @@ function SignInScreen() {
                     >
                       Sign In
                     </Button>
+                  </Grid>
+
+                  <Grid item xs={12}>
+                    <Grid
+                      container
+                      spacing={0}
+                      direction="row"
+                      justifyContent="center"
+                    >
+                      <ButtonGroup variant="text" color="primary" size="small">
+                        <Button className={classes.actionButton}>
+                          Create Account
+                        </Button>
+                        <Button className={classes.actionButton}>
+                          Reset Password
+                        </Button>
+                      </ButtonGroup>
+                    </Grid>
                   </Grid>
                 </Grid>
               </form>
