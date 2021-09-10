@@ -7,11 +7,9 @@ import {
   FormControlLabel,
   Checkbox,
   Button,
-  ButtonGroup,
   createTheme,
   makeStyles,
 } from '@material-ui/core';
-import { grey } from '@material-ui/core/colors';
 
 const theme = createTheme({
   typography: {
@@ -29,16 +27,29 @@ const theme = createTheme({
       '"Segoe UI Symbol"',
     ].join(','),
   },
+  palette: {
+    primary: {
+      main: '#4EA2D4',
+      contrastText: '#FDF9FC',
+    },
+    text: {
+      disabled: '#6D7472',
+    },
+    background: {
+      default: '#E6E2E5',
+      paper: '#FDF9FC',
+    },
+  },
 });
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   header: {
     textAlign: 'left',
     fontSize: '1.4rem',
     fontWeight: 600,
   },
   headerHelper: {
-    color: grey[700],
+    color: theme.palette.text.disabled,
     fontSize: '0.9rem',
     textAlign: 'left',
   },
