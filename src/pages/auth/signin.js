@@ -55,10 +55,19 @@ const useStyles = makeStyles((theme) => ({
   },
   actionButton: {
     minWidth: '30px',
+    fontSize: '0.8rem',
+    paddingTop: '0px',
+    paddingBottom: '0px',
+    textTransform: 'none',
   },
   rememberMe: {
-    fontSize: '0.9rem',
-    fontWeight: 300,
+    fontSize: '0.8rem',
+    // fontWeight: 300,
+  },
+  createAccountText: {
+    fontSize: '0.8rem',
+    textAlign: 'right',
+    // fontWeight: 300,
   },
   passwordRow: {
     paddingTop: '0px!important',
@@ -118,18 +127,37 @@ function SignInScreen() {
                   <Grid item xs={12} className={classes.passwordRow}>
                     <Grid container spacing={0}>
                       <Grid item xs={12}>
-                        <Grid container spacing={0}>
-                          <FormControlLabel
-                            control={<Checkbox color="primary" size="small" />}
-                            label={
-                              <Typography
-                                variant="body1"
-                                className={classes.rememberMe}
-                              >
-                                Remember me
-                              </Typography>
-                            }
-                          />
+                        <Grid
+                          container
+                          spacing={0}
+                          direction="row"
+                          alignItems="center"
+                        >
+                          <Grid item xs={true}>
+                            <FormControlLabel
+                              control={
+                                <Checkbox color="primary" size="small" />
+                              }
+                              label={
+                                <Typography
+                                  variant="body1"
+                                  className={classes.rememberMe}
+                                >
+                                  Remember me
+                                </Typography>
+                              }
+                            />
+                          </Grid>
+                          <Grid item xs="auto">
+                            <Button
+                              variant="text"
+                              color="primary"
+                              size="small"
+                              className={classes.actionButton}
+                            >
+                              Forgot password?
+                            </Button>
+                          </Grid>
                         </Grid>
                       </Grid>
                       <Grid item xs={12}>
@@ -150,15 +178,23 @@ function SignInScreen() {
                       spacing={0}
                       direction="row"
                       justifyContent="center"
+                      alignItems="center"
                     >
-                      <ButtonGroup variant="text" color="primary" size="small">
-                        <Button className={classes.actionButton}>
-                          Create Account
+                      <Grid item xs="auto">
+                        <span className={classes.createAccountText}>
+                          Don't have an account?
+                        </span>
+                      </Grid>
+                      <Grid item xs="auto">
+                        <Button
+                          variant="text"
+                          color="primary"
+                          size="small"
+                          className={classes.actionButton}
+                        >
+                          Get started
                         </Button>
-                        <Button className={classes.actionButton}>
-                          Reset Password
-                        </Button>
-                      </ButtonGroup>
+                      </Grid>
                     </Grid>
                   </Grid>
                 </Grid>
