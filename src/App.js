@@ -4,7 +4,7 @@ import LandingScreen from "./pages/landing";
 
 function App() {
   return (
-    <div>
+    <div className="dark:bg-gray-900 min-h-screen">
       <Routes>
         <Route exact path="/signIn" element={<SignInScreen />} />
         <Route exact path="/" element={<LandingScreen />} />
