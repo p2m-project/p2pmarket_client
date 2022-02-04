@@ -1,6 +1,5 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
-  darkMode: "media",
   theme: {
     extend: {},
   },
@@ -21,7 +20,7 @@ module.exports = {
           "accent-focus": "#2aa79b",
           "accent-content": "#ffffff",
 
-          neutral: "#3d4451",
+          neutral: "#1F2937",
           "neutral-focus": "#2a2e37",
           "neutral-content": "#ffffff",
 
