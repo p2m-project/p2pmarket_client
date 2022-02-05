@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { signIn } from "../../data/authSlice";
+import { useNavigate } from "react-router-dom";
 
 export default function SignInScreen() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [requestStatus, setRequestStatus] = useState("idle");
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const onEmailChange = (e) => setEmail(e.target.value);
   const onPasswordChange = (e) => setPassword(e.target.value);
@@ -17,12 +19,12 @@ export default function SignInScreen() {
     if (canSave) {
       try {
         setRequestStatus("pending");
-        await dispatch(signIn({ email: email, password: password }));
+        await dispatch(signIn({ email: email, password: password })).unwrap();
         // setEmail("");
         // setPassword("");
+        navigate("/", { replace: true });
       } catch (err) {
         console.log("Failed to sign in: ", err);
-      } finally {
         setRequestStatus("idle");
       }
     }
