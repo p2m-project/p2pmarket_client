@@ -5,6 +5,9 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import store from "./data/store";
+import axios from "axios";
+
+axios.defaults.baseURL = "http://localhost:8000";
 
 ReactDOM.render(
   <Provider store={store}>
