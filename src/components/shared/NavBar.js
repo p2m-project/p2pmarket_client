@@ -22,7 +22,7 @@ export default function NavBar() {
         </button>
       </div>
       <div className="flex-1 hidden pr-2 mx-2 lg:flex">
-        <img src={logo} className="w-10 mr-1" />
+        <img src={logo} className="w-10 mr-1" alt="logo" />
         <span className="text-lg font-bold">p2p|market</span>
       </div>
       <div className="flex-1 w-full">
@@ -89,7 +89,9 @@ export default function NavBar() {
               <div className="p-3 text-sm text-center">John Doe</div>
             </li>
             <li>
-              <a className="text-center"> Sign Out </a>
+              <div className="btn btn-ghost text-center normal-case" href="#">
+                Sign Out
+              </div>
             </li>
           </ul>
         </div>

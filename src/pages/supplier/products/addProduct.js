@@ -14,9 +14,7 @@ export default function AddProductScreen() {
               <div className="form-control w-full max-w-xs">
                 <label className="label">
                   <span className="label-text">Choose your superpower</span>
-                  <a href="#" className="label-text-alt">
-                    Pick wisely
-                  </a>
+                  <span className="label-text-alt">Pick wisely</span>
                 </label>
                 <select className="select select-bordered w-full">
                   <option disabled="" defaultValue="">
@@ -27,12 +25,8 @@ export default function AddProductScreen() {
                   <option>invisibility</option>
                 </select>
                 <label className="label">
-                  <a href="#" className="label-text-alt">
-                    Cant pick?
-                  </a>
-                  <a href="#" className="label-text-alt">
-                    Need hint?
-                  </a>
+                  <span className="label-text-alt">Cant pick?</span>
+                  <span className="label-text-alt">Need hint?</span>
                 </label>
               </div>
             </div>
