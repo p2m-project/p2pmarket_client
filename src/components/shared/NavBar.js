@@ -30,7 +30,7 @@ export default function NavBar() {
           <input type="text" placeholder="Search" className="input w-full" />
         </div>
       </div>
-      <div className="flex-none">
+      <div className="flex-none pl-2">
         <button className="btn btn-square btn-ghost">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -63,6 +63,36 @@ export default function NavBar() {
             ></path>
           </svg>
         </button>
+      </div>
+
+      <div className="flex-none">
+        <div className="dropdown dropdown-end">
+          <div tabIndex="0" className="m-1 btn btn-square btn-ghost">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fillRule="evenodd"
+                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </div>
+          <ul
+            tabIndex="0"
+            className="p-2 shadow menu dropdown-content bg-base-300 rounded-box w-36 overflow-y-scroll"
+          >
+            <li>
+              <div className="p-3 text-sm text-center">John Doe</div>
+            </li>
+            <li>
+              <a className="text-center"> Sign Out </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );
