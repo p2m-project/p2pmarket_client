@@ -4,7 +4,7 @@ import logo from "../../assets/images/logo/vector/icon.png";
 export default function NavBar() {
   return (
     <div className="navbar mb-2 shadow-lg bg-neutral text-neutral-content">
-      <div className="flex-none flex md:hidden">
+      <div className="flex-none flex lg:hidden">
         <button className="btn btn-square btn-ghost">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -25,9 +25,9 @@ export default function NavBar() {
         <img src={logo} className="w-10 mr-1" />
         <span className="text-lg font-bold">p2p|market</span>
       </div>
-      <div className="flex-1 lg:flex-none">
-        <div className="form-control">
-          <input type="text" placeholder="Search" className="input" />
+      <div className="flex-1 w-full">
+        <div className="form-control w-full">
+          <input type="text" placeholder="Search" className="input w-full" />
         </div>
       </div>
       <div className="flex-none">
