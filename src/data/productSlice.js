@@ -1,12 +1,11 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createEntityAdapter } from "@reduxjs/toolkit";
 
-const initialState = {
-  name: "",
-  email: "",
-  token: "",
-  status: "",
+const productsAdapter = createEntityAdapter();
+
+const initialState = productsAdapter.initialState({
+  status: "idle",
   error: null,
-};
+});
 
 const productSlice = createSlice({
   name: "product",
@@ -15,3 +14,9 @@ const productSlice = createSlice({
 });
 
 export default productSlice.reducer;
+
+export const {
+  selectAll: selectAllPosts,
+  selectById: selectById,
+  selectIds: selectPostIds,
+} = productsAdapter.getSelectors((state) => state.products);
