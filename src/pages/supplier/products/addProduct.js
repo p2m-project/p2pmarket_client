@@ -6,28 +6,41 @@ export default function AddProductScreen() {
     <div>
       <NavBar />
       <div className="flex justify-center">
-        <div className="w-10/12">
+        <div className="w-full px-2 md:p-0 md:w-10/12">
           <h1 className="font-semibold text-xl mb-3 mt-4">Add Product</h1>
 
           <div className="card bg-base-200">
             <div className="card-body">
-              <div className="form-control w-full max-w-xs">
+              <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Choose your superpower</span>
-                  <span className="label-text-alt">Pick wisely</span>
+                  <span className="label-text">Name</span>
                 </label>
-                <select className="select select-bordered w-full">
-                  <option disabled="" defaultValue="">
-                    Choose your superpower
-                  </option>
-                  <option>telekinesis</option>
-                  <option>time travel</option>
-                  <option>invisibility</option>
-                </select>
+                <input
+                  type="text"
+                  placeholder="username"
+                  className="input input-info input-bordered"
+                />
                 <label className="label">
-                  <span className="label-text-alt">Cant pick?</span>
-                  <span className="label-text-alt">Need hint?</span>
+                  <span className="label-text-alt">
+                    Field should not be left empty
+                  </span>
                 </label>
+              </div>
+
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Description</span>
+                </label>
+                <textarea
+                  className="textarea h-24 textarea-bordered"
+                  placeholder="Description"
+                ></textarea>
+              </div>
+
+              <div className="pt-3">
+                <button className="btn btn-primary disabled:bg-base-100">
+                  Save
+                </button>
               </div>
             </div>
           </div>
