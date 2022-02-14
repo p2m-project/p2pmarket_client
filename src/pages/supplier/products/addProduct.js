@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import NavBar from "../../../components/shared/NavBar";
 
 export default function AddProductScreen() {
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+
+  const onNameChange = (e) => setName(e.target.value);
+  const onDescriptionChange = (e) => setDescription(e.target.value);
+
+  const canSave = [name, description].every(Boolean);
+
   return (
     <div>
       <NavBar />
@@ -17,28 +25,30 @@ export default function AddProductScreen() {
                 </label>
                 <input
                   type="text"
-                  placeholder="username"
+                  placeholder="Product Name"
                   className="input input-info input-bordered"
+                  value={name}
+                  onChange={onNameChange}
                 />
-                <label className="label">
-                  <span className="label-text-alt">
-                    Field should not be left empty
-                  </span>
-                </label>
               </div>
 
-              <div className="form-control">
+              <div className="form-control pt-1">
                 <label className="label">
                   <span className="label-text">Description</span>
                 </label>
                 <textarea
                   className="textarea h-24 textarea-bordered"
-                  placeholder="Description"
+                  placeholder="Product Description"
+                  value={description}
+                  onChange={onDescriptionChange}
                 ></textarea>
               </div>
 
               <div className="pt-3">
-                <button className="btn btn-primary disabled:bg-base-100">
+                <button
+                  className="btn btn-primary disabled:bg-base-100"
+                  disabled={!canSave}
+                >
                   Save
                 </button>
               </div>
