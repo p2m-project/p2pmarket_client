@@ -3,6 +3,7 @@ import SignInScreen from "./pages/auth/signin";
 import LandingScreen from "./pages/landing";
 import AddProductScreen from "./pages/supplier/products/addProduct";
 import { BrowserRouter } from "react-router-dom";
+import SupplierProductsScreen from "./pages/supplier/products/supplierProducts";
 
 function App() {
   return (
@@ -11,6 +12,11 @@ function App() {
         <Routes>
           <Route exact path="/signIn" element={<SignInScreen />} />
           <Route exact path="/addProduct" element={<AddProductScreen />} />
+          <Route
+            exact
+            path="/supplierProducts"
+            element={<SupplierProductsScreen />}
+          />
           <Route exact path="/" element={<LandingScreen />} />
         </Routes>
       </BrowserRouter>

@@ -2,7 +2,7 @@ import { createSlice, createEntityAdapter } from "@reduxjs/toolkit";
 
 const productsAdapter = createEntityAdapter();
 
-const initialState = productsAdapter.initialState({
+const initialState = productsAdapter.getInitialState({
   status: "idle",
   error: null,
 });
