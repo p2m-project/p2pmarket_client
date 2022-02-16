@@ -1,4 +1,8 @@
-import { createSlice, createEntityAdapter } from "@reduxjs/toolkit";
+import {
+  createSlice,
+  createEntityAdapter,
+  createAsyncThunk,
+} from "@reduxjs/toolkit";
 
 const productsAdapter = createEntityAdapter();
 
@@ -12,6 +16,23 @@ const productSlice = createSlice({
   initialState: initialState,
   reducers: {},
 });
+
+export const getSupplierProducts = createAsyncThunk(
+  "products/getProducts",
+  async (credentials, { rejectWithValue }) => {
+    axios.defaults.withCredentials = true;
+    axios.defaults.xsrfHeaderName = "X-XSRF-TOKEN";
+
+    await axios.get("/sanctum/csrf-cookie");
+
+    try {
+      const response = await axios.get("api/products", credentials);
+      return response.data;
+    } catch (err) {
+      return rejectWithValue(err.response.data);
+    }
+  }
+);
 
 export default productSlice.reducer;
 
